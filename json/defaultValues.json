@@ -1,0 +1,11 @@
+{ 
+  "health": 128, 
+	"ammo" : 100,
+	"nbEnnemiesMax" : 5,
+	"ennemy1Health" : 1,
+	"randomMax" : 40,
+	"ennemy1Damage" : 8,
+	"ennemy1Speed" : 3,
+	"nbEnnemiesDestroyStageUp" : 10
+
+} 

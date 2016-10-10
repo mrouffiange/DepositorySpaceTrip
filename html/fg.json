@@ -1,0 +1,21 @@
+{"frames": {
+
+"explosionFrames.png":
+{
+	"frame": {"x":1,"y":1,"w":1206,"h":1281},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1206,"h":1281},
+	"sourceSize": {"w":1206,"h":1281},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "fg.png",
+	"format": "RGBA8888",
+	"size": {"w":1208,"h":1283},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5628be2786a6a7ec16d9b38c53036e9c:236840ead26f2f40c6fe8e382870c05d:7a9df7d18f570f4cdbab10bf1f4c1f3a$"
+}
+}

@@ -1,0 +1,94 @@
+<!doctype>
+<html>
+	<head>
+		<title>! Space Trip !</title>	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Jeu Simon">
+		<meta name="keywords" content="HTML,CSS,JavaScript">
+		<meta name="author" content="Martin Rouffiange">	
+		<script src = "js/jquery.min.js"></script>
+		<script src = "js/pixi.min.js"></script>
+		<script>
+		var renderer, alienImages = [], texture, stage, mc, textureArray = [], containerExplosion;
+		
+		function setup()
+			{
+				renderer = PIXI.autoDetectRenderer(800, 600);
+				renderer.backgroundColor = 0x555555;
+				document.body.appendChild(renderer.view);
+
+				// create the root of the scene graph
+				stage = new PIXI.Container();
+				alienImages = ["images/explosion/1.png","images/explosion/2.png","images/explosion/3.png","images/explosion/4.png","images/explosion/5.png","images/explosion/6.png","images/explosion/7.png","images/explosion/8.png","images/explosion/9.png","images/explosion/10.png","images/explosion/11.png","images/explosion/12.png","images/explosion/13.png","images/explosion/14.png","images/explosion/15.png","images/explosion/16.png","images/explosion/17.png","images/explosion/18.png","images/explosion/19.png","images/explosion/20.png"];
+				
+				for(var i = 0; i < 20; i++)
+				{
+						 texture = new PIXI.Sprite(PIXI.loader.resources[alienImages[i]].texture);
+						 texture.time = 25;
+						 textureArray.push(texture);
+				}
+				
+				containerExplosion = new PIXI.Container();
+				stage.addChild(containerExplosion);
+				mc = new PIXI.extras.MovieClip(textureArray);
+				mc.gotoAndPlay(0);
+				mc.loop = false;
+				window.addEventListener("mousedown", explode, false);
+				containerExplosion.addChild(mc);
+
+				animate();
+			}
+			
+			function explode(evt){
+				containerExplosion.y = evt.clientY - containerExplosion.height/2;
+				containerExplosion.x = evt.clientX - containerExplosion.width/2;
+				mc.gotoAndPlay(0);
+			}
+
+			function animate() {
+			renderer.render(stage);
+
+			requestAnimationFrame(animate);
+			}
+			
+			function init()
+			{
+				PIXI.loader
+				.add([
+					"images/explosion/1.png",
+					"images/explosion/2.png",
+					"images/explosion/3.png",
+					"images/explosion/4.png",
+					"images/explosion/5.png",
+					"images/explosion/6.png",
+					"images/explosion/7.png",
+					"images/explosion/8.png",
+					"images/explosion/9.png",
+					"images/explosion/10.png",
+					"images/explosion/11.png",
+					"images/explosion/12.png",
+					"images/explosion/13.png",
+					"images/explosion/14.png",
+					"images/explosion/15.png",
+					"images/explosion/16.png",
+					"images/explosion/17.png",
+					"images/explosion/18.png",
+					"images/explosion/19.png",
+					"images/explosion/20.png"
+				])
+				.load(setup);
+			}
+			
+			window.onload = init;
+		</script>
+		<link rel="stylesheet" type="text/css" href="style/styleSpace.css" /> 
+	</head>
+	<body>
+		<main>
+			<!--<canvas id="canvas1" width="1200" height="600" style="border:1px solid black"></canvas>!-->
+		</main>
+		<footer>
+			<p>(c) Space Trip - Komtini Game Company - 2016</p>
+		</footer>
+	</body>
+</html>
