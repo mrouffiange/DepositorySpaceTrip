@@ -1,1 +1,1 @@
-Pour tester le jeu de manière optimal, il est préférable d'ouvrir index.html sur le navigateur Mozilla Firefox.
+Pour tester le jeu de manière optimale, il est préférable d'ouvrir index.html sur le navigateur Mozilla Firefox.
